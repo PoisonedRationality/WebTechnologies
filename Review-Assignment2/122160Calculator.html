@@ -1,0 +1,142 @@
+<!--August 30, 2021
+    122160
+    Simple Calculator
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" type="text/css" href="CalculatorStyle.css">
+    </head>
+    <body>
+
+        <h1 id="header">My Calculator</h1>
+        <!--The calculator is formatted as a table within a form.-->
+        <form id="calc">
+            <table>
+                <!--This row consists of the display and the clear button.-->
+                <tr>
+                    <td colspan="3" id="display">
+                        <input type="text" name="display" disabled>
+                    </td>
+                    <td>
+                        <input type="button" value="Clear" onclick="calc.display.value =''">
+                    </td>
+                </tr>
+            
+                <!--Each cell in the next rows are buttons.-->
+                <tr>
+                    <td>
+                        <input type="button" value="1" onclick="calc.display.value += '1'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="2" onclick="calc.display.value += '2'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="3" onclick="calc.display.value += '3'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="+" onclick="calc.display.value += '+'">
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <input type="button" value="4" onclick="calc.display.value += '4'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="5" onclick="calc.display.value += '5'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="6" onclick="calc.display.value += '6'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="-" onclick="calc.display.value += '-'">
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <input type="button" value="7" onclick="calc.display.value += '7'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="8" onclick="calc.display.value += '8'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="9" onclick="calc.display.value += '9'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="*" onclick="calc.display.value += '*'">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="(" onclick="calc.display.value += '('">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="0" onclick="calc.display.value += '0'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value=")" onclick="calc.display.value += ')'">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="/" onclick="calc.display.value += '/'">
+                    </td>
+                </tr>
+                <!--All values in the trig functions are converted from degrees to radians by multiplying by pi/180.-->
+                <tr>
+                    <td>
+                        <input type="button" value="sin" onclick="calc.display.value=Math.sin(calc.display.value*Math.PI/180)">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="cos" onclick="calc.display.value=Math.cos(calc.display.value*Math.PI/180)">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="tan" onclick="calc.display.value=Math.tan(calc.display.value*Math.PI/180)">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="=" onclick="calc.display.value=eval(calc.display.value)">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="." onclick="calc.display.value += '.'">
+                    </td>
+                    <!--The memory button (M) stores the value in the display. This value can be reused later by pressing the memory recall (MR) button.-->
+                    <td>
+                        <input type="hidden"  name="store"><input type="button"value="M" onclick="calc.store.value=calc.display.value; calc.display.value=''">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="MR" onclick="calc.display.value += calc.store.value">
+                    </td>
+            
+                    <td>
+                        <input type="button" value="π" onclick="calc.display.value += Math.PI">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+
+
+
+
+
+</html>
